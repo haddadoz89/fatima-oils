@@ -1,0 +1,77 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "mixer": "Mix Your Blend",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "profile": "Profile",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "search": "Search",
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "home": {
+    "title": "Fatima Oils",
+    "subtitle": "Natural Herbal Apothecary",
+    "description": "Discover the art of traditional herbal mixology with our premium collection of natural oils and herbs",
+    "exploreProducts": "Explore Products",
+    "createMix": "Create Custom Mix",
+    "featured": "Featured Products"
+  },
+  "mixer": {
+    "title": "Herbal Mixer",
+    "selectIngredients": "Select Your Ingredients",
+    "enterGrams": "Enter Grams",
+    "addToMix": "Add to Mix",
+    "yourMix": "Your Custom Blend",
+    "totalWeight": "Total Weight",
+    "estimatedPrice": "Estimated Price",
+    "saveMix": "Save Mix",
+    "addToCart": "Add to Cart",
+    "mixName": "Mix Name",
+    "mixDescription": "Description (optional)"
+  },
+  "products": {
+    "all": "All Products",
+    "oils": "Essential Oils",
+    "herbs": "Herbs",
+    "seeds": "Seeds",
+    "pricePerGram": "per gram",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "continueShopping": "Continue Shopping",
+    "proceedToCheckout": "Proceed to Checkout",
+    "removeItem": "Remove",
+    "updateQuantity": "Update Quantity"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shippingAddress": "Shipping Address",
+    "paymentMethod": "Payment Method",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order",
+    "notes": "Order Notes (optional)"
+  },
+  "auth": {
+    "signInTitle": "Sign In to Your Account",
+    "signUpTitle": "Create New Account",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
+  }
+}

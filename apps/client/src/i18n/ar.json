@@ -1,0 +1,77 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "mixer": "اخلط مزيجك",
+    "cart": "السلة",
+    "checkout": "إتمام الطلب",
+    "profile": "الملف الشخصي",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signOut": "تسجيل الخروج",
+    "search": "بحث",
+    "language": "اللغة",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح"
+  },
+  "home": {
+    "title": "زيوت فاطمة",
+    "subtitle": "عطارة الأعشاب الطبيعية",
+    "description": "اكتشف فن خلط الأعشاب التقليدية مع مجموعتنا المتميزة من الزيوت والأعشاب الطبيعية",
+    "exploreProducts": "استكشف المنتجات",
+    "createMix": "إنشاء مزيج مخصص",
+    "featured": "المنتجات المميزة"
+  },
+  "mixer": {
+    "title": "خلاط الأعشاب",
+    "selectIngredients": "اختر مكوناتك",
+    "enterGrams": "أدخل الجرامات",
+    "addToMix": "أضف إلى المزيج",
+    "yourMix": "مزيجك المخصص",
+    "totalWeight": "الوزن الإجمالي",
+    "estimatedPrice": "السعر المقدر",
+    "saveMix": "حفظ المزيج",
+    "addToCart": "أضف إلى السلة",
+    "mixName": "اسم المزيج",
+    "mixDescription": "الوصف (اختياري)"
+  },
+  "products": {
+    "all": "جميع المنتجات",
+    "oils": "الزيوت العطرية",
+    "herbs": "الأعشاب",
+    "seeds": "البذور",
+    "pricePerGram": "للجرام",
+    "inStock": "متوفر",
+    "outOfStock": "غير متوفر",
+    "addToCart": "أضف إلى السلة"
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "total": "المجموع",
+    "continueShopping": "متابعة التسوق",
+    "proceedToCheckout": "إتمام الطلب",
+    "removeItem": "إزالة",
+    "updateQuantity": "تحديث الكمية"
+  },
+  "checkout": {
+    "title": "إتمام الطلب",
+    "shippingAddress": "عنوان الشحن",
+    "paymentMethod": "طريقة الدفع",
+    "orderSummary": "ملخص الطلب",
+    "placeOrder": "تأكيد الطلب",
+    "notes": "ملاحظات الطلب (اختياري)"
+  },
+  "auth": {
+    "signInTitle": "تسجيل الدخول إلى حسابك",
+    "signUpTitle": "إنشاء حساب جديد",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "username": "اسم المستخدم",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟"
+  }
+}

@@ -1,0 +1,152 @@
+// Prisma Schema for Fatima Oils
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  role         Role     @default(USER)
+  points       Int      @default(0)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  mixes      Mix[]
+  orders     Order[]
+  pointsLog  PointsLog[]
+  cartItems  CartItem[]
+
+  @@map("users")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Product {
+  id             String   @id @default(uuid())
+  nameAr         String   @map("name_ar")
+  nameEn         String   @map("name_en")
+  category       Category
+  pricePerGram   Float    @map("price_per_gram")
+  descriptionAr  String?  @map("description_ar")
+  descriptionEn  String?  @map("description_en")
+  imageUrl       String?  @map("image_url")
+  modelUrl       String?  @map("model_url")
+  stockGrams     Float    @map("stock_grams")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  mixIngredients MixIngredient[]
+  orderItems     OrderItem[]
+  cartItems      CartItem[]
+
+  @@map("products")
+}
+
+enum Category {
+  OIL
+  HERB
+  SEED
+}
+
+model Mix {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  name          String
+  description   String?
+  isPublic      Boolean  @default(false) @map("is_public")
+  timesOrdered  Int      @default(0) @map("times_ordered")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ingredients MixIngredient[]
+
+  @@map("mixes")
+}
+
+model MixIngredient {
+  id            String  @id @default(uuid())
+  mixId         String  @map("mix_id")
+  productId     String  @map("product_id")
+  gramsSelected Float   @map("grams_selected")
+
+  mix     Mix     @relation(fields: [mixId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("mix_ingredients")
+}
+
+model Order {
+  id         String      @id @default(uuid())
+  userId     String      @map("user_id")
+  totalPrice Float       @map("total_price")
+  status     OrderStatus @default(PENDING)
+  address    String?
+  notes      String?
+  createdAt  DateTime    @default(now()) @map("created_at")
+  updatedAt  DateTime    @updatedAt @map("updated_at")
+
+  user  User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items OrderItem[]
+
+  @@map("orders")
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model OrderItem {
+  id        String @id @default(uuid())
+  orderId   String @map("order_id")
+  productId String @map("product_id")
+  quantity  Float
+  price     Float
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("order_items")
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  productId String   @map("product_id")
+  grams     Float
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@map("cart_items")
+}
+
+model PointsLog {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  pointsChange Int      @map("points_change")
+  reason       String
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("points_log")
+}

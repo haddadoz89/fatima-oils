@@ -1,0 +1,33 @@
+{
+  "name": "fatima-oils",
+  "version": "1.0.0",
+  "description": "Full-stack herbal apothecary web application with immersive 3D experience",
+  "private": true,
+  "workspaces": [
+    "apps/client",
+    "apps/server"
+  ],
+  "scripts": {
+    "dev": "pnpm --parallel --filter ./apps/* dev",
+    "build": "pnpm --filter ./apps/* build",
+    "start": "pnpm --parallel --filter ./apps/* start",
+    "clean": "pnpm --filter ./apps/* clean && rm -rf node_modules",
+    "server:dev": "pnpm --filter @fatima-oils/server dev",
+    "client:dev": "pnpm --filter @fatima-oils/client dev",
+    "db:migrate": "pnpm --filter @fatima-oils/server db:migrate",
+    "db:seed": "pnpm --filter @fatima-oils/server db:seed"
+  },
+  "keywords": [
+    "herbal",
+    "apothecary",
+    "3d",
+    "ecommerce",
+    "react",
+    "three.js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
